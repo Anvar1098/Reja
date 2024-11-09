@@ -1,0 +1,1 @@
+console.log('train tasks are set up!');
