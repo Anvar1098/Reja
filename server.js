@@ -16,7 +16,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 //1 Kirish code
 app.use(express.static('public')); // public fayl uchun dostup
 app.use(express.json()); // json formatdagi datani arrayga perevod qiladi
-app.use(express.urlencoded({extended: true})); //Extracts form data from POST requests and makes it accessible in req.body.
+app.use(express.urlencoded({extended: true})); 
 
 
 //2 Session code
