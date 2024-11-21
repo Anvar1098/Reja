@@ -120,3 +120,36 @@ async function run() {
   console.log(javob);
 }
 run();
+
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+// B task :
+
+function countDigits(myString) {    // function qurib olamiz parametrga myString pass qilamiz
+  const characters = myString.split('');  // yangi variable ga tenglab olamiz
+  const digits = characters.filter(char => !isNaN(char) && char !== ' ');  // characters.filter qilib fakat raqamlar qatnashgan elementlarni filter qilib beradi!
+  return digits.length;
+}
+
+console.log(countDigits("qw12er45ty67o9")); 
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function countDigits(myString) {
+  let count = 0;
+  for (let char of myString) {
+    if (!isNaN(char) && char !== ' ') {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(countDigits("qw12er45ty67o9")); 
+
+
+
+
+
+
+
