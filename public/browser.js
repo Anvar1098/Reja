@@ -1,3 +1,6 @@
+//const { default: axios } = require("axios");
+//const { response } = require("../app");
+
 console.log('FrontEnd JS is active');
 
 function itemTepmlate(item) {
@@ -40,3 +43,25 @@ axios
   });
 
 });
+
+document.addEventListener('click', function (e) {
+   //delete
+   console.log(e.target);
+  if(e.target.classList.contains('delete-me')) {
+   if (confirm('Aniq ochirmoqchimisz?')) {
+      axios
+      .post('/delete-item', { id: e.target.getAttribute('data-id') })
+      .then ((response) => {
+         console.log(response.data);
+         e.target.parentElement.parentElement.remove();
+      })
+      .catch((err) => {
+          console.log('Please try again');
+      }) 
+   }
+  }
+   //edit
+   if (e.target.classList.contains('edit-me')) {
+      alert('you pressed button edit');
+   }
+})
