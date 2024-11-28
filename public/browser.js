@@ -1,6 +1,3 @@
-//const { default: axios } = require("axios");
-//const { response } = require("../app");
-
 console.log("FrontEnd JS is active");
 
 function itemTepmlate(item) {
@@ -54,6 +51,29 @@ document.addEventListener("click", function (e) {
   }
   //edit
   if (e.target.classList.contains("edit-me")) {
-    alert("you pressed button edit");
+    let userInput = prompt(
+      'Ozgartirish kiriting',
+      e.target.parentElement.parentElement.querySelector(".text").innerHTML
+    );
+    if (userInput) {
+      axios
+        .post('/edit-item', { 
+          id: e.target.getAttribute('data-id'),
+          new_input: userInput,
+        }).then((response) => { 
+          console.log(response.data);
+          e.target.parentElement.parentElement.querySelector('.text').innerHTML = userInput;
+        }).catch((err) => {
+          console.log('Please try again');
+        });
+    }
   }
+}); 
+
+
+document.getElementById('clean-all').addEventListener('click', function () {
+  axios.post('/delete-all', { delete_all: true }).then(response => {
+   alert(response.data.state);
+   document.location.reload();
+  })
 });
