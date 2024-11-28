@@ -150,47 +150,73 @@ console.log('passed here 1');
 //-----------------------------------------------------------------------------------------------------------
 
 // MIT task 
-const moment = require("moment");
+// const moment = require("moment");
 
-class Shop {
-  // state
-  non;
-  lagmon;
-  coke;
+// class Shop {
+//   // state
+//   non;
+//   lagmon;
+//   coke;
   
- // constructor
- constructor(non, lagmon, coke) {
-   this.non = non;
-   this.lagmon = lagmon;
-   this.coke = coke;
- }
+//  // constructor
+//  constructor(non, lagmon, coke) {
+//    this.non = non;
+//    this.lagmon = lagmon;
+//    this.coke = coke;
+//  }
  
 
- // method
- qoldiq() {
-  console.log(`${moment().format('HH:mm')}, ${this.non} non, ${this.lagmon} lagmon va ${this.coke} coke mavjud! `);
- }
+//  // method
+//  qoldiq() {
+//   console.log(`${moment().format('HH:mm')}, ${this.non} non, ${this.lagmon} lagmon va ${this.coke} coke mavjud! `);
+//  }
 
- sotish(count) {
-   if (this.non > count) {
-    this.non -= count;
-    console.log(`${moment().format('HH:mm')}, ${count} ta non sotildi va qoldi ${this.non} non `);
-   }
-   } 
+//  sotish(count) {
+//    if (this.non > count) {
+//     this.non -= count;
+//     console.log(`${moment().format('HH:mm')}, ${count} ta non sotildi va qoldi ${this.non} non `);
+//    }
+//    } 
 
-  qabul(add) {
-    this.coke += add;
-    console.log(`${moment().format('HH:mm')}, ${add} ta coke qoshildi, va  ${this.coke} coke boldi `);
+//   qabul(add) {
+//     this.coke += add;
+//     console.log(`${moment().format('HH:mm')}, ${add} ta coke qoshildi, va  ${this.coke} coke boldi `);
+//   }
+
+//  }
+
+
+// const shop = new Shop (4, 5, 2);
+// shop.qoldiq(); 
+// shop.sotish(3);
+// shop.qabul(4);
+
+
+//---------------------------------------------------------------------------------------------------------------
+
+// Task:
+
+function checkContent(str1, str2) {
+  if (str1.length !== str2.length) {
+    return false; 
+  } else {
+    let count = 0; 
+    for (let b = str1.length - 1; b >= 0; b--) {
+      let index = str2.indexOf(str1[b]);
+      if (index !== -1) {
+        count++;
+        str2 = str2.slice(0, index) + str2.slice(index + 1);
+      } else {
+        return false;
+      }
+    }
+    return count === str1.length;
   }
+}
 
- }
-
-
-const shop = new Shop (4, 5, 2);
-shop.qoldiq(); 
-shop.sotish(3);
-shop.qabul(4);
-
+console.log(checkContent("mitgroup", "gmtiprou")); 
+console.log(checkContent("abc", "abd"));   
+console.log(checkContent("seul", "seoul")); 
 
 
 
