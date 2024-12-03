@@ -222,15 +222,29 @@ console.log('passed here 1');
 
 // Task
 
-function getReverse(str) {
-  return str.split('').reverse().join('');
-}
+// function getReverse(str) {
+//   return str.split('').reverse().join('');
+// }
 
-console.log(getReverse("hello"));
-console.log(getReverse("MIT"));
-console.log(getReverse("21"));
+// console.log(getReverse("hello"));
+// console.log(getReverse("MIT"));
+// console.log(getReverse("21"));
 
+//-----------------------------------------------------------------------------------------------------------------
 
+// Task
+
+const findDoublers = (str) => {
+  for (let i = 0; i < str.length; i++) {
+      
+      if (str.indexOf(str[i]) !== i) {
+          return true; 
+      }
+  }
+  return false; 
+};
+
+console.log(findDoublers("anvar")); 
 
 
 
