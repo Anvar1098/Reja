@@ -234,17 +234,43 @@ console.log('passed here 1');
 
 // Task
 
-const findDoublers = (str) => {
-  for (let i = 0; i < str.length; i++) {
+// const findDoublers = (str) => {
+//   for (let i = 0; i < str.length; i++) {
       
-      if (str.indexOf(str[i]) !== i) {
-          return true; 
-      }
-  }
-  return false; 
-};
+//       if (str.indexOf(str[i]) !== i) {
+//           return true; 
+//       }
+//   }
+//   return false; 
+// };
 
-console.log(findDoublers("anvar")); 
+// console.log(findDoublers("anvar"));
+
+//----------------------------------------------------------------------------------------------------------------
+
+// Task
+
+function getHighestIndex(array) {
+  let max = -Infinity; // Eng kichik integerdan check qiladi
+  let maxIndex = -1;    
+
+  for (let i = 0; i < array.length; i++) {
+      if (array[i] !== max && array[i] > max) {
+          max = array[i];
+          maxIndex = i;
+      }
+      
+  }
+
+  return maxIndex; 
+}
+
+
+console.log(getHighestIndex([5, 21, 12, 21, 8])); 
+console.log(getHighestIndex([3, 5, 7, 10]));      
+console.log(getHighestIndex([10, 10, 10, 10]));   
+console.log(getHighestIndex([0]));                
+console.log(getHighestIndex([-1, -2, -3, -4]));   
 
 
 
