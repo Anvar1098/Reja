@@ -2,7 +2,7 @@ const http = require('http');
 const mongodb = require('mongodb');
 
 let db;
-const connectionString = "mongodb+srv://anvar00:CZ2CVKkprEreoL2W@cluster0.wetuy.mongodb.net/Reja"
+const connectionString = "mongodb+srv://reja_user:YourSecureRejaPass123@cluster0.wetuy.mongodb.net/Reja?retryWrites=true&w=majority";
 
 mongodb.connect(
     connectionString, 

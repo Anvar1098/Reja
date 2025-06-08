@@ -250,27 +250,27 @@ console.log('passed here 1');
 
 // Task
 
-function getHighestIndex(array) {
-  let max = -Infinity; // Eng kichik integerdan check qiladi
-  let maxIndex = -1;    
+// function getHighestIndex(array) {
+//   let max = -Infinity; // Eng kichik integerdan check qiladi
+//   let maxIndex = -1;    
 
-  for (let i = 0; i < array.length; i++) {
-      if (array[i] !== max && array[i] > max) {
-          max = array[i];
-          maxIndex = i;
-      }
+//   for (let i = 0; i < array.length; i++) {
+//       if (array[i] !== max && array[i] > max) {
+//           max = array[i];
+//           maxIndex = i;
+//       }
       
-  }
+//   }
 
-  return maxIndex; 
-}
+//   return maxIndex; 
+// }
 
 
-console.log(getHighestIndex([5, 21, 12, 21, 8])); 
-console.log(getHighestIndex([3, 5, 7, 10]));      
-console.log(getHighestIndex([10, 10, 10, 10]));   
-console.log(getHighestIndex([0]));                
-console.log(getHighestIndex([-1, -2, -3, -4]));   
+// console.log(getHighestIndex([5, 21, 12, 21, 8])); 
+// console.log(getHighestIndex([3, 5, 7, 10]));      
+// console.log(getHighestIndex([10, 10, 10, 10]));   
+// console.log(getHighestIndex([0]));                
+// console.log(getHighestIndex([-1, -2, -3, -4]));   
 
 
 
